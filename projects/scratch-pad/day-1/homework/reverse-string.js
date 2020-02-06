@@ -21,8 +21,8 @@
 
 function reverseString(input) {
     // YOUR CODE GOES BELOW HERE //
-       var reString = "";
-     for (var i = input.length - 1; i >= 0; i--) {
+       var reString = ""; // declare an empty string
+     for (var i = input.length - 1; i >= 0; i--) { //
          reString += input[i];
      }
      return reString;

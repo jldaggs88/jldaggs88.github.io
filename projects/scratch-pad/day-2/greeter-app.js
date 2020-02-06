@@ -35,9 +35,16 @@
 
 function greeter(hour) {
     // YOUR CODE BELOW HERE //
-    
-    
-    
+
+if (hour === 0 || hour <= 11) { // prints Good Morning! to the console if bewteen 11 and 0 Boolean statement and logical operation used
+    console.log('Good Morning!');
+} else if (hour === 12 || hour <= 16 ) { // prints Good Afternoon! to the console if bewteen 16 and 12 Boolean statement and logical operation used
+    console.log('Good Afternoon!');
+} else if (hour === 17 || hour <= 21) { // prints Good Evening! to the console if bewteen 21 and 17 Boolean statement and logical operation used
+    console.log('Good Evening!');
+} else { // prints Good Night! to the console if any outside of 0 and 21. 
+    console.log('Good Night!');
+} 
     
     // YOUR CODE ABOVE HERE //
 }
