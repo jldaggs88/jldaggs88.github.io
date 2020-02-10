@@ -35,7 +35,10 @@
 
 function greeter(hour) {
     // YOUR CODE BELOW HERE //
-
+    
+    // At 12pm morning becomes afternoon.
+    // Set the conditions to evalute if the agrument falls between morning, evening, and night timeframes.
+    // The last else statement doesn't need an else if statment or condition. 
 if (hour === 0 || hour <= 11) { // prints Good Morning! to the console if bewteen 11 and 0 Boolean statement and logical operation used
     console.log('Good Morning!');
 } else if (hour === 12 || hour <= 16 ) { // prints Good Afternoon! to the console if bewteen 16 and 12 Boolean statement and logical operation used

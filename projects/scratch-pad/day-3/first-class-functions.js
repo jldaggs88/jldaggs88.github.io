@@ -14,13 +14,16 @@
 function createGreaterThanFilter(base) {
     // YOUR CODE BELOW HERE //
 
-    return function test(value){ //Returned a function called test with a parameter (value)
-        return value > base; //Returns whether or not value is greater than base using comparison operator
-    };
-    
+    return function (value){ //Returned a function called test with a parameter (value)
+        if (value > base){
+            return true;  //Returns whether or not value is greater than base using comparison operator
+        } else {
+            return false;
+        }
+    }; 
     // YOUR CODE ABOVE HERE //
 }
-
+   //createGreaterThanFilter(7)(9);
 /** 
  * Given an input base to test against, which could be a String or Number, 
  * return a Function that tests whether a given value is less than the 
@@ -42,11 +45,11 @@ function createLessThanFilter(base){
  */
 function createStartsWithFilter(startsWith) {
     // YOUR CODE BELOW HERE //
-
+    // Using an arrow function called string evaluate whether a string starts with a called character.
         return string => {
-            if (startsWith.toLowerCase() === string[0].toLowerCase()){
+            if (startsWith.toLowerCase() === string[0].toLowerCase()){ // .toLowerCase to override case sensitivity. Strict comparison will evaluate to true if conditions are met.
                 return true;
-            } else {
+            } else { // false will be return to the screen once function call is complete is condition evaluates to false.
                 return false;
             }
         
@@ -64,12 +67,14 @@ function createStartsWithFilter(startsWith) {
 function createEndsWithFilter(endsWith) {
     // YOUR CODE BELOjW HERE //
         
-        return function test (string) {
-        if (string.endsWith(endsWith.length-1)) {
+    // Using an arrow function called string evaluate whether a string ends with a called character.
+    return string => {
+        if (endsWith.toLowerCase() === string[string.length-1].toLowerCase()) { // .toLowerCase to override case sensitivity. Strict comparison will evaluate to true if conditions are met.
             return true;
-        } else {
+        } else { // false will be return to the screen once function call is complete is condition evaluates to false.
             return false;
         }
+        
     };
     
     
@@ -86,6 +91,18 @@ function createEndsWithFilter(endsWith) {
 function modifyStrings(strings, modify) {
     // YOUR CODE BELOW HERE //
     
+    // Declare an varaible assigned to an array literal.
+    var arrayOfStrings = [];
+    
+    // Use a for-loop to iterate through an array. 
+    // Start: 0 Index
+    // Stop: Last index
+    // Increment: +1
+    
+    for (var i = 0; i < strings.length; i++) {
+        arrayOfStrings.push(modify(strings[i])); // Use .push method to add modifier to the array literal.
+    } 
+    return arrayOfStrings; // Once the function is called it will log print the string modifications into the array.
     
     
     
@@ -103,10 +120,17 @@ function modifyStrings(strings, modify) {
  */
 function allStringsPass(strings, test) {
     // YOUR CODE BELOW HERE //
-    
-    
-    
-    
+    // a for loop will give us access to each element in an array
+    for (var i= 0; i < strings.length; i++){
+    //test each element in the array with a test 
+    //return false if test fail
+     if (test(strings[i])=== false){
+        return  false;
+    }
+    //check the next string if test passes
+    }
+    //if none of the string pass the test return true
+    return true;
     // YOUR CODE ABOVE HERE //
 }
 

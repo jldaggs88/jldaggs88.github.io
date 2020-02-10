@@ -15,9 +15,13 @@
 function isArray(value) {
     // YOUR CODE BELOW HERE //
     
-    return if (value)true 
-    
-    
+    // We can decipher if a value is an array using the Array.isarray() method.
+    // Typeof will not decipher between an object and an array.
+    if (Array.isArray(value)) { // If else statement to determine if condition is true.
+        return true;
+    } else { // Run the else codeblock if the value is not an array at the function call.
+        return false;
+    }  
     // YOUR CODE ABOVE HERE //
 }
 
@@ -32,8 +36,15 @@ function isArray(value) {
 function isObject(value) {
     // YOUR CODE BELOW HERE //
     
-    
-    
+    // If else statement to set conditions and run code block if the statment is true.
+    // || Double Pipe comparison (OR) to determine if any of the conditions are true.
+    if (value === null || Array.isArray(value) || value instanceof Date) {
+        return false; 
+    } else if (typeof value === "object") {
+        return true;
+    } else { 
+        return false;
+    }
     
     // YOUR CODE ABOVE HERE //
 }
@@ -47,6 +58,15 @@ function isObject(value) {
 function isCollection(value) {
     // YOUR CODE BELOW HERE //
     
+    // If else statement to set conditions and run code block if the statment is true.
+    // || Double Pipe comparison (OR) to determine if any of the conditions are true.
+    if (value === null || value instanceof Date) {
+        return false;
+    } else if (Array.isArray(value) || typeof value === "object") {
+        return true;
+    } else {
+        return false;
+    }
     
     
     
@@ -72,14 +92,22 @@ function isCollection(value) {
  *    typeOf("javascript") -> "string"
  *    typeOf([1,2,3]) -> "array"
  */ 
-function typeOf(value) {
-    // YOUR CODE BELOW HERE //
+ function typeOf(value) {
+//     // YOUR CODE BELOW HERE //
+    // If else statement used to evaluate the true of the listed condition
+    if (Array.isArray(value)) { // Array.isArray() to determine if value is and array.
+        return "array";
+    } else if (value === null) { // Boolean statment with value strictly equal to null to determine if the value is null.
+        return "null";
+    } else if (value instanceof Date) { // Instanceof Date to determine whether the value is a date.
+        return "date";
+    } else {
+        return typeof value; //Typeof to determine is value is a number, string, undefined, boolean, or function.
+    }
     
     
-    
-    
-    // YOUR CODE ABOVE HERE //
-}
+//     // YOUR CODE ABOVE HERE //
+ }
 
 // DON'T REMOVE THIS CODE //////////////////////////////////////////////////////
 if((typeof process !== 'undefined') &&

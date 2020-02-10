@@ -21,12 +21,35 @@
  *  b. you'll need a loop, which one is best?
  *  c. you'll wanna make use of the push() method of Array.
  */
+
+     
+    //I: 2 number 
+    //O: Array
+    //C: 
+ 
 function range(start, end) {
     // YOUR CODE GOES BELOW HERE //
     
+        //create a container to hold the numbers
+const myArray = [];
     
-    
-    
+    //implement a for loop and gain access between start and end in ascending order
+    if (start < end){
+    //if start is greater than we will need to implement a for loop in descending order 
+        for (let i = start; i <= end; i++){
+    // return the storage conatiner array
+            myArray.push(i);
+    }
+    } else {
+        // if start is greater than end
+        // implement a for loop in descending order
+    for (let i = start; i >= end; i--){
+        // send it back to myArray
+        myArray.push(i);
+    }
+}
+
+return myArray;
     // YOUR CODE GOES ABOVE HERE //
 }
 

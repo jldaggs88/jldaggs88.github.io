@@ -15,7 +15,7 @@
 function print(value) {
   // YOUR CODE BELOW HERE //
   
-  console.log(value); // prints parameter/value to the screen
+  console.log(value); // prints parameter/value to the screen when function call is completed.
   
   // YOUR CODE ABOVE HERE //
 }

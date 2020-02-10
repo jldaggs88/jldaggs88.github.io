@@ -21,11 +21,17 @@
 
 function reverseString(input) {
     // YOUR CODE GOES BELOW HERE //
-       var reString = ""; // declare an empty string
-     for (var i = input.length - 1; i >= 0; i--) { //
-         reString += input[i];
+    
+    // Declare an empty string to collect the output that will be return once the function is called.
+       var revString = "";
+    // For loop is best for iterating through a string and log all its elements.
+    // We know to stop looping once we have reached the first index since we are decrementing through the string.
+    // To acces an individual character in a string use bracket notations or a .length property.
+    // To concatenate string use the += assignment operator. The strings will add as they iterate.
+     for (var i = input.length - 1; i >= 0; i--) {
+         revString += input[i];
      }
-     return reString;
+     return revString; // A function call will print our revString string to the console.
     
     
     

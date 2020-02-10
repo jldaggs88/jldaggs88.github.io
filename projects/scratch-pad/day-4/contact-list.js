@@ -36,23 +36,84 @@
  */
 
 // YOUR CODE GOES BELOW HERE //
-function makeContact(id, nameFirst, nameLast) {
-
-} 
-
-
-function makeContactList() {
+function makeContact(id, nameFirst, nameLast) {//factory function - any function that can return an object
+// makeContact function take three parameters 
+//return a contact object
+    var contactObject = {
+        id: 1,
+        nameFirst: "Max",
+        nameLast: "Gaudin"
+    }
+    return contactObject
+}
+function makeContactList(addContact) {
     /*
      * You need something here to hold contacts. See length api for a hint:
      */
-    var contacts;
+    var contacts = [];
     
     return {
         // we implemented the length api for you //
         length: function() {
             return contacts.length;
         }
+        //addContact: contact.contact-list,
+        addContact.function(contactObject) {
+            contact.push(contactObject);
+        }
+        findContact:function(fullName) {
+            
+            for (var i = 0; i contacts.length; i++) {
+                if (fullName === contacts[i].nameFirst + "" + contacts[i].nameLast) {
+                    return contact[i];
+                }
+            }
+            return undefined;
+        },
+        removeContact: function(fullName){
+            
+            for (var i = 0; i < contacts.length; i++) {
+                if(fullNAme === contacts[i].nameFirst + "" + contacts[i].nameLast) {
+                    return contacts.splice(i, 1);
+                }
+            }
+            
+        }
+    };
+     removeContact: function(contact){
+        for(var i = 0; i < contacts.length; i++){
+           if(contacts[i] === contact) {
+        return contacts.splice(i, 1);
+           }
+        }
+    },
+    find: function(fullName) {
+        for(var i = 0; i < contacts.length; i++) {
+            if(fullName === contacts[i]["nameFirst"] + " " + contacts[i]["nameLast"]) {
+            return contacts[i];
+            }
+        }
+    },
+    printAllContactNames: function(){
+                var retval = "";
+        console.log(contacts);
+        for (var i = 0; i < contacts.length; i++){
+            var fullName = contacts[i]["nameFirst"] + " " + contacts[i]["nameLast"];
+            if (i === contacts.length - 1 ){
+                retval += fullName;
+               
+            }else {
+                retval += fullName + '\n';
+            }
+        }  
+       
+      return retval
     }
+    };    
+   }
+
+
+    
 }
 
 
