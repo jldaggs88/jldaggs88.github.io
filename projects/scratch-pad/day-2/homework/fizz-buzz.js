@@ -18,20 +18,22 @@ function fizzBuzz(numbers) {
     // Stop: 100
     // Increment: +1
     
+    var fizzyArray = []; // Create an object literal
     
-    for (var i = 1; i <= 100; i++) {
-        if (i % 3 === 0) {
-            return "Fizz"
-        } else if (i % 5 === 0) {
-            return "Buzz"
-        } else if (i % 3 === 0 && i % 5 === 0) {
-            return "FizzBuzz"
-        } else { i
-        
+    for (var i = 1; i <= 100; i++) { // Create a for loop to loop through 1 - 100
+        if (i / 3 === 0) { //If else statement to evaluate if true
+            return "Fizz";
+        } else if (i / 5 === 0) { // Else statement to evaluate if condition is met 
+            return "Buzz";
+        } else if (i / 3 === 0 && i / 5 === 0) { // Else statement to evaluate of condition is met
+            return "FizzBuzz";
+        } else { // Else return the next number in the loop.
+            return i;
         }
-    
-    }
         
+    }
+    
+    fizzyArray.push(i);   
     // YOUR CODE GOES ABOVE HERE //
 }
 
@@ -44,4 +46,5 @@ if((typeof process !== 'undefined') &&
    (typeof process.versions.node !== 'undefined')) {
     // here, export any references you need for tests //
     module.exports.fizzBuzz = fizzBuzz;
-    
+   }
+   
