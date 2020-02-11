@@ -19,21 +19,19 @@ function fizzBuzz(numbers) {
     // Increment: +1
     
     var fizzyArray = []; // Create an object literal
-    
-    for (var i = 1; i <= 100; i++) { // Create a for loop to loop through 1 - 100
-        if (i / 3 === 0) { //If else statement to evaluate if true
-            return "Fizz";
-        } else if (i / 5 === 0) { // Else statement to evaluate if condition is met 
-            return "Buzz";
-        } else if (i / 3 === 0 && i / 5 === 0) { // Else statement to evaluate of condition is met
-            return "FizzBuzz";
-        } else { // Else return the next number in the loop.
-            return i;
+    for (var i = 1; i <= 100; i++) {
+        if (i % 3 == 0) {
+            console.log("Fizz");
+        } else if (i % 5 == 0) {
+            console.log("Buzz");
+        } else if (i % 3 == 0 && i % 5 == 0) {
+            console.log("FizzBuzz");
+        } else {
+            console.log(i);
         }
-        
+    fizzyArray.push([i]);
     }
-    
-    fizzyArray.push(i);   
+return fizzyArray;
     // YOUR CODE GOES ABOVE HERE //
 }
 
