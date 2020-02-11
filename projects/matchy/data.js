@@ -24,21 +24,24 @@ console.log(animal);        // Prints `animal` Object to the console;
 //////////////////////////////////////////////////////////////////////
 var noises = [];            // A variable named `noises` and assigned to an empty array.
 noises[0] = 'clicks';       // Bracket notation to give `noises` it's first element. A string of the animal sound.
-noises.push("whistles"); 
-noises.unshift("screaming");
-noises.push("loudness");
-noises[3] = "crying";
-console.log(noises.length);
-console.log(noises.length-1);
-console.log(noises);
+noises.push("whistles");    // Using an array function add another noise to the end of `noises`.
+noises.unshift("screaming");// Add an element to `noises` using .unshift to add to the front of the array.
+noises.push("loudness");   
 
+noises[animal.noises.length] = "crying";       // Use bracket notation to add another element to the end of `noises`.
+console.log(noises.length); // Returns the length of `noises`
+console.log(noises.length-1);//Returns the last element in `noises` again without hard coding the index.
+console.log(noises);        // Returns the whole array.
+//Looks Right!
 
 //////////////////////////////////////////////////////////////////////
 // Step 3 - Combining Step 1 and 2 ///////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-animal['noises'] = noises;
-animal.noises.push("ooos and ahhhs");
-console.log(animal);
+animal['noises'] = noises; // Use bracket notation to assign the `noises` property on `animal` to our new `noises` array.
+
+animal.noises.push("ooos and ahhhs"); // Use any object.key to push another noise to the `noises` property on `animal`.
+
+console.log(animal); // Returns animal object
 // Looks Right!
 
 /* *******************************************************************
@@ -66,17 +69,19 @@ console.log(animal);
 //////////////////////////////////////////////////////////////////////
 // Step 6 - A Collection of Animals //////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-var animals = []; 
-animals.push(animal);
-console.log(animals);
+var animals = [];  // Create a variable named `animals` and assign it to an empty array.
 
-var duck = {
+animals.push(animal); // .push array method to add animals object to the array.
+
+console.log(animals); // Returns animals array
+
+var duck = { // Create a variable called duck assigned to an object with data
 species: 'duck', name: 'Jerome', noises: ['quack', 'honk', 'sneeze', 'woosh']
 };
-animals.push(duck); //Push duck into animals array.
-console.log(animals); //
+animals.push(duck); // Push duck into animals array.
+console.log(animals); // Returns animals array updates with duck key/values pairs
 
-var frog = {
+var frog = { // Create two more species with key/value pairs 
 species: 'frog', name: 'Tony', noises: ['Ribbet', 'other creepy noises', 'sneeze', 'woosh']
 };
 
@@ -86,17 +91,26 @@ species: 'dog', name: 'Greg', noises: ['growl', 'cries', 'wheezing', 'barks']
 
 animals.push(frog, dog);
 
+console.log(animals); // Looks right!
+console.log(animals.length); //Looks right!
+
 //////////////////////////////////////////////////////////////////////
 // Step 7 - Making Friends ///////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 // The instructions specific to create a list which is another name for an array.
-var friends = [];
+var friends = []; // Variable called friends
 
-// function getRandom(array) {
-//     return array[]
-// }
+function getRandom(animals) {
+    for (var i = 0; i < animals.length; i ++) {
+        return Math.floor(Math.random(animals.length));
+    }
+}
 
+friends.push(frog["name"]);
+animals[getRandom(animals)].friends = friends;
+console.log(friends); //
 
+console.log(animals); //Return frog object key with the friends list property
 /**
  * Nice work! You're done Part 1. Pat yourself on the back and
  * move onto Part 2 in the file called "functions.js"

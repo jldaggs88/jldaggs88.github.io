@@ -42,10 +42,76 @@ function makeContact(id, nameFirst, nameLast) {//factory function - any function
 
     var contactObject = { // Create an object with key pairs
         id: id, //Reference to existing key values pairs
-        nameFirst: nameFirst,
+        nameFirst: nameFirst, 
         nameLast: nameLast
-    }
-    return contactObject // Return the contactObject
+    };
+    return contactObject; // Return the contactObject
+}
+
+function makeContactList() {
+   
+    /*
+     * You need something here to hold contacts. See length api for a hint:
+     */
+    var contacts = [];
+   
+    return {
+        // we implemented the length api for you //
+        length: function() { //Create a function that returns the # of contacts within the list
+            return contacts.length; // .length will return the total number of elements in the contact list
+           
+        },
+        addContact: function(obj) { // Created a function with the parameter object to later pass in the contactObject
+            contacts.push(obj); // Push the contactObject onto the contacts array.
+        },
+        findContact: function(fullName) { // Returns the contact object as a string 
+            for (var i = 0; i < contacts.length; i++){ // For loop will loop through all contacts
+            if (fullName === contacts[i].nameFirst + " " + contacts[i].nameLast){
+                return contacts[i];
+            } 
+                return undefined; //Returns undefined if condition is not met.
+            }
+            
+        },
+
+        removeContact: function(contact) { // Created a for-loop that will iterate through the contacts
+        for(var i = 0; i < contacts.length; i++) {
+           if(contacts[i] === contact) { //If statment to splice if conditions are met
+                return contacts.splice(i, 1); // .splice(value, index) will remove the vale for the index
+           }
+        }
+        
+        },
+        find: function(fullName) { // For loop created to interate through the contacts.
+        for(var i = 0; i < contacts.length; i++) {
+            if(fullName === contacts[i]["nameFirst"] + " " + contacts[i]["nameLast"]) { // Fullname is strictly equal to contact first and last name strings.
+                return contacts[i];
+            }
+        }
+        
+        },
+        
+        printAllContactNames: function() { 
+                var wholeList = ""; // An empty string create to house contacts as strings.
+        for (var i = 0; i < contacts.length; i++){ // For-loop will iterate through the contact list
+        
+        var fullName = contacts[i]["nameFirst"] + " " + contacts[i]["nameLast"]; //fullName assigned to the contacts first and last name as a string.
+        
+        if (i === contacts.length - 1 ){ 
+            wholeList += fullName;
+               
+        } else {
+            wholeList += fullName + '\n';
+        }
+        
+        }  
+       
+            return wholeList;
+        }
+        
+        };   
+    
+    
 }
 
 // // YOUR CODE GOES ABOVE HERE //
