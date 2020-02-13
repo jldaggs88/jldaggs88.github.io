@@ -82,7 +82,7 @@ It's super important to give your brain and yourself a rest when you can! Grab a
  1. [x] Create a variable named `animals` and assign it to an empty array.
  2. [x] `push` our `animal` that we created to `animals`.
  3. [x] `console.log` `animals`. What does it look like?
- 4. [ ] Create a variable called `duck` and assign it to the data:
+ 4. [x] Create a variable called `duck` and assign it to the data:
   - `{ species: 'duck', name: 'Jerome', noises: ['quack', 'honk', 'sneeze', 'woosh'] }`
  5. [x] `push` `duck` to `animals`
  6. [x] `console.log` `animals`. What does it look like?
@@ -97,12 +97,12 @@ Imagine that our website has a profile page for each animal. On this profile pag
  1. [x] Choose a data structure for this **list** of friends.
  2. [x] Write a comment in your code that explains why you chose this data structure.
  3. [x] Create a variable called `friends` and assign it to the data structure that you chose.
- 4. [ ] Take a look at the documentation for `Math.random` here: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
- 5. [ ] Write a function called `getRandom` that takes our `animals` array and returns the `index` of a random element using `Math.random`
- 6. [ ] Using a random index from this function that you just created, get a random animal and add its `name` to `friends`.
- 7. [ ] `console.log` `friends`.
- 8. [ ] add `friends` as a **property** named `friends` on one of the animals in `animals`
- 9. [ ] `console.log` your work.
+ 4. [x] Take a look at the documentation for `Math.random` here: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+ 5. [x] Write a function called `getRandom` that takes our `animals` array and returns the `index` of a random element using `Math.random`
+ 6. [x] Using a random index from this function that you just created, get a random animal and add its `name` to `friends`.
+ 7. [x] `console.log` `friends`.
+ 8. [x] add `friends` as a **property** named `friends` on one of the animals in `animals`
+ 9. [x] `console.log` your work.
  
 ## Step 8 - Take Another Break!!
 
@@ -156,13 +156,13 @@ This is called **data validation** and it's extremely important in web developme
 Now you're done! Time to submit your great work to Greenlight to get that sweet, sweet green light.
 
 ## Grade and submit
- 1. [ ] Open up a new `bash` terminal
- 2. [ ] Run the command `os test` in the bash terminal
+ 1. [x] Open up a new `bash` terminal
+ 2. [x] Run the command `os test` in the bash terminal
    - Select your class
    - Select your Matchy
- 3. [ ] Make sure that you are passing all tests, or fix any failing tests
- 4. [ ] When all your tests pass, run the command `os submit`
+ 3. [x] Make sure that you are passing all tests, or fix any failing tests
+ 4. [x] When all your tests pass, run the command `os submit`
    - Select your class
    - Select your Matchy
- 5. [ ] Check Greenlight to ensure your grade updated correctly
- 6. [ ] You're done! 
+ 5. [x] Check Greenlight to ensure your grade updated correctly
+ 6. [x] You're done! 

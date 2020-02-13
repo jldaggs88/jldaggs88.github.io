@@ -16,7 +16,7 @@ animal.species = "dolphin"; // Using dot notation to give animal a property name
 animal['name'] = "Dolly";   // Using the bracket notation give 'animal' a property of the animals name.
 animal.noises = [];         // Dot notation is the best way to give `animal` a **property** called `noises` with a value of empty array.
 console.log(animal);        // Prints `animal` Object to the console;
-                            //Work Save and Previewed
+                            // Work Save and Previewed
 
 
 //////////////////////////////////////////////////////////////////////
@@ -28,7 +28,7 @@ noises.push("whistles");    // Using an array function add another noise to the 
 noises.unshift("screaming");// Add an element to `noises` using .unshift to add to the front of the array.
 noises.push("loudness");   
 
-noises[animal.noises.length] = "crying";       // Use bracket notation to add another element to the end of `noises`.
+noises[animal.noises.length] = "crying"; // Use bracket notation to add another element to the end of `noises`.
 console.log(noises.length); // Returns the length of `noises`
 console.log(noises.length-1);//Returns the last element in `noises` again without hard coding the index.
 console.log(noises);        // Returns the whole array.
