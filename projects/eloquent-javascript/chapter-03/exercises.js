@@ -2,7 +2,17 @@
 // min /////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function min() {
+function min(num1, num2) {
+// Create a function that takes two arguments and returns their min.
+// Condition set to evalute whether true or false. 
+if (num1 < num2) {
+  return num1;
+} else if (num1 > num2) {
+  return num2;
+//Else statment set to deterwmine if the numbers are equal.
+} else {
+  return 0;
+}
 
 }
 
@@ -10,7 +20,19 @@ function min() {
 // isEven //////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function isEven() {
+function isEven(number) {
+// Funtion is called even and accepts a positive number as the only parameter.
+// If else chain to determine whether to number is negative or positive.
+if (number == 0) { 
+  return true;
+} else if (number == 1) {
+  return false;
+} else if (number < 0) {
+  return isEven(-number);
+//Recursive call to determine if the number is negative and loop until it aborts.
+} else {
+  return isEven(number - 2);
+}
 
 }
 
@@ -18,16 +40,22 @@ function isEven() {
 // countChars //////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function countChars() {
-
+function countChars(string, character) {
+var counted = 0;
+for (var i = 0; i < string.length; i++) {
+  if (string[i] == character) {
+    counted += 1;
+  }
+}
+return counted;
 }
 
 ////////////////////////////////////////////////////////////////////////////////
 // countBs /////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function countBs() {
-
+function countBs(string) {
+  return countChars(string, "B");
 }
 
 ////////////////////////////////////////////////////////////////////////////////

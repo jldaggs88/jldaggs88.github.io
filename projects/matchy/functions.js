@@ -57,14 +57,12 @@ function add(animals, animal) { // Our two parameters array called animals; an o
 //var animals1 = [];
 for (var i = 0; i < animals.length; i++) { // The for loop will increment through the array by one. 
 
-if (!(animal.name.length > 0) || !(animal.species.length > 0) || (animals[i].name === animal.name))
+if (!(animal.name.length > 0) || !(animal.species.length > 0) || (animals[i].name === animal.name)) // Each conditional statment will be evaluated to
+// if this statement evaluates to false. 
 return;
 }
-{ // If conditional statment will check animals array and evaluate the length 
-// id more than zero for the species and name.
-          animals.push(animal);
+          animals.push(animal); // The animals argument will be passes throrugh the function and added if the conditions are met.
 
-} // Getting error when loading the Mocha spec runner. Tested the code and it is not an infinite loop.
 }
 
 
