@@ -8,9 +8,9 @@
 
 // 1. While loop //
 /*
-* A while loop checks of an expressin is true and then runs the code block as long 
-* and it is true. A break statement stops the code from executing. Is loop must have two parts.
-* These are a condition and a incrementer. 
+* A while loop checks of an expression is true and then runs the code block as long 
+* and it is true. A break statement stops the code from executing. The loop must have two parts.
+* These are a condition and an incrementer. 
 */
 while (5 > 3) {
     console.log("Clap your hands!");
@@ -19,13 +19,13 @@ while (5 > 3) {
 // 2. For loop //
 /*
 * A for loop must have three parts which are:
-* Starting point or initilization assigned to a variable called i.
-* Stopping point or condtion that determines how long we will run the code based
+* Starting point or initialization assigned to a variable called i.
+* Stopping point or condition that determines how long we will run the code based
 * on how long its condition evaluates to true.
 * Increment determines how we will increase or decrease as we loop through the given numbers.
-* A for loop reads the declaration and assignment and then the coniditon set. 
+* A for loop reads the declaration and assignment and then the condition set. 
 * It determines whether the condition is true and then performs the action inside the curly 
-* braces. After that the remainding value is incremented in the final stage of the code.
+* braces. After that the remaining value is incremented in the final stage of the code.
 * This continues until the condition is no longer true.
 */
 
@@ -43,14 +43,14 @@ var exampleObject = {
     yourkey: "Value"
 };
 for (var key in exampleObject) {
-    console.log(key) /* will loop through the inordered 
-* until all of its keys are listed. object[key] will returns its value pair.
+    console.log(key) /* will loop through the unordered list.
+* until all of its keys are listed. object[key] will return its value pair.
 */ 
 }
 
 // 4. Looping over an Array, forwards and backwards //
 /* To loop over an array use a for loop by using its indexes as starting
-* and stopping conditions incrementing through the indexs. 
+* and stopping conditions incrementing through the indexes. 
 */
 
 var arrayMe = []; //Create a container for the list.
@@ -62,11 +62,11 @@ for (var i = arrayMe.length -1; i >= 0; i--) { //Set the stopping condition to 0
 var arrayYou = []; //Create a container for the list.
 //Utilize the index of 0 to assign i the first index of the array. 
 for (var i = 0; i <= arrayMe.length -1; i++) { //Set the stopping condition to the final and last index of the array. Incrementing by 1.
-    console.log(arrayYou[i]); //Pritns arrayYou indexes to the console.
+    console.log(arrayYou[i]); //Prints arrayYou indexes to the console.
 }
 // 5. Loop over an Object //
 /* 
-*Requires a for-in loop. For-in loop is the only way to loop through a obejct without converting it to an array.
+*Requires a for-in loop. For-in loop is the only way to loop through an object without converting it to an array.
 */
 var exampleObject = {
     thisKey: true,
@@ -75,6 +75,6 @@ var exampleObject = {
 };
 for (var key in exampleObject) {
     console.log(key)
-    } /* will loop through the inordered 
-* until all of its keys are listed. object[key] will returns its value pair.
+    } /* will loop through the unordered list. 
+* until all of its keys are listed. object[key] will return its value pair.
 */ 

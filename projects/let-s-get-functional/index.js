@@ -33,35 +33,30 @@ var maleCount = function(array) {
     }).length; // chain on dot length to get # of male customers
     
 };
-
-var femaleCount = function(array){
     //I: an array
     //O: a number
     //C: use _.reduce
-    
     //Find the # of female customers
-    var femaleCustomers = 0;
-    _.reduce(array, 0, function(seed, element){
-        if (element.gender === 'female'){
-            return femaleCustomers = seed++;
-        }
-    });
-    return femaleCustomers;
-};
+    
+var femaleCount;
+
+
 
 var oldestCustomer = function (array){
     //I: an array
     //O: a string
     //C: N/A
-    
     //Find the oldest customer's name
 };
 
-var youngestCustomer;
+var youngestCustomer; 
 
 var averageBalance;
 
+
+
 var firstLetterCount;
+
 
 var friendFirstLetterCount;
 

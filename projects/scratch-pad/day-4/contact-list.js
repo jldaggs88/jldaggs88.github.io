@@ -114,15 +114,15 @@ function makeContactList() {
     
 }
 
-// // YOUR CODE GOES ABOVE HERE //
+// YOUR CODE GOES ABOVE HERE //
 
 
 
 
-// // DON'T REMOVE THIS CODE //////////////////////////////////////////////////////
-// if((typeof process !== 'undefined') &&
-// (typeof process.versions.node !== 'undefined')) {
-//     // here, export any references you need for tests //
-//     module.exports.makeContact = makeContact;
-//     module.exports.makeContactList = makeContactList;
-// }
+// DON'T REMOVE THIS CODE //////////////////////////////////////////////////////
+if((typeof process !== 'undefined') &&
+(typeof process.versions.node !== 'undefined')) {
+    // here, export any references you need for tests //
+    module.exports.makeContact = makeContact;
+    module.exports.makeContactList = makeContactList;
+}

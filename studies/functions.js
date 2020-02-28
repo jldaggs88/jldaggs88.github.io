@@ -1,10 +1,10 @@
 /**
 * FUNCTIONS
 * 
-* Functions are block of code that perform an action once evoked. The function keyword , unique
-* name of the function then follow by parenthesis that will hold a given parameter. It is knowa placeholder 
+* Functions are blocks of code that perform an action once evoked. The function keyword , unique
+* name of the function then followed by parenthesis that will hold a given parameter. It is known placeholder 
 * After the parameter is curly braces that will house a code block for execution. Functions are utilized by
-* calling or evoking the function using the name of the funtion followed by agruments in the space of the placeholder
+* calling or evoking the function using the name of the function followed by arguments in the space of the placeholder
 * we created. Objects are first class objects.
 */
 
@@ -16,10 +16,10 @@
 */
 
 // What’s the difference between a function’s parameters and arguments PASSED to a function?
-/* A function parameters are placeholders that tell use what type of arugments to pass into our function.
+/* A function parameters are placeholders that tell us what type of arguments to pass into our function.
 * Parameters are used through the function to indicate what action we will later perform on the arguments.
-* Argruments are placed outside of the function body. They are the part of the function call. Calling the function
-* passes the agruments into the parameters set through out the code block. The action we coded will take place on the arguments.
+* Arguments are placed outside of the function body. They are part of the function call. Calling the function
+* passes the arguments into the parameters set throughout the code block. The action we coded will take place on the arguments.
 */
 
 function numbersAdd (num1, num2) { // Parameters will determine the input

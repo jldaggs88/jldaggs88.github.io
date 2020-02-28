@@ -9,7 +9,7 @@
  // They are as follows: 
  // = Assignment operator assigns a value to a value.
  var assignMe = 3;
- // += Adds to value to an assign value.
+ // += Adds to value to an assigned value.
  var y = 1;
  y += 2; // prints 3 to the console.
  // -= Subtracts from an assigned value.
@@ -33,7 +33,7 @@
  // Subtraction -
  var less = 3 - 2; // Produces the difference of the values.
  // Multiplication *
- var mutli = 3 * 2; // Produces the product of the values.
+ var multi = 3 * 2; // Produces the product of the values.
  // Division //
  var divide = 3 / 2; // Divides the values.
  // Division Remainder 
@@ -59,31 +59,31 @@
  // !=  Not equal
  var two = 2;
  two != 2; // Evaluates to false
- // !== Not striclty equal to
+ // !== Not strictly equal to
  var four = 4;
  four !== "4"; // Evaluates to true
  // >   Greater than
- var morethan = 3 > 2; // Evaluates to true
+ var moreThan = 3 > 2; // Evaluates to true
  // <   Less than
- var lessthan = 5 < 2; // Evaluates to false
+ var lessThan = 5 < 2; // Evaluates to false
  // >=  Greater than or equal to
- var greaterequal = 4 >= 2; // Evaluates to true
+ var greaterEqual = 4 >= 2; // Evaluates to true
  // <=  Less than or equal to
- var lesserequal = 50 <= 50; // Evaluates to true 
+ var lesserEqual = 50 <= 50; // Evaluates to true 
 
 // 4. Logical Operators //
 /* 
-* Logical Operators are used to run test resulting in true or false. They are used in 
-* between to values or variables to determine the their logic.
+* Logical Operators are used to run tests resulting in true or false. They are used in 
+* between two values or variables to determine their logic.
 */
 
 // && And - This AND That evaluates to true
 var a = 2;
 var b = 12;
-(a < 8 && b > 1); // Evaluates to true because BOTH statements are true.
+(a < 8 && b > 1); // Evaluates to be true because BOTH statements are true.
 
 // || Or - This OR That evaluates to true
-(a === 2 || b === 11);  // Evaluates to true because 1 of the values is true.
+(a === 2 || b === 11);  // Evaluates to be true because 1 of the values is true.
 
 // ! Not - This NOT true
 (a == b); // Evaluates to true because 2 does NOT equal 12
@@ -111,14 +111,14 @@ var b = 12;
  var theSandwhiches = 2;
  theSandwhiches!= 1; // Evaluates to true
 
- // typeof  Use to determine the datatype. It evaluate objects, booleans, function, number, strings and whether it's undefined.
+ // typeof  Use to determine the datatype. It evaluates objects, booleans, function, number, strings and whether it's undefined.
  var value = "Max";
  typeof value; // Evaluates to string
  
  
- // 6. Tenary Operators // 
+ // 6. Ternary Operators // 
  /* 
- * Takes three argument. A comparison, a result upon a true compariosn and 
+ * Takes three arguments. A comparison, a result upon a true comparison and 
  * a third based on a false comparison.
  */
  var two = 2, three = 3, four;

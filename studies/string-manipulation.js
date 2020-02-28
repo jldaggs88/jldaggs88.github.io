@@ -19,5 +19,6 @@ stringy.length; // Returns 14
 // .length-1  The length -1 returns the final index of the given string.
 stringy.length-1; //Returns 13
 
-// indexOf() Finding an index of the a given string.
+// indexOf() Finding an index of the given string.
 stringy.indexOf("g"); // Returns 6
+
