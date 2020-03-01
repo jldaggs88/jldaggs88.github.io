@@ -103,8 +103,6 @@ var youngestCustomer = function(array) {
     return name;
 };
 
-  
-
 var averageBalance = function(array) {
     let balances = _.pluck(array, "balance");
     let test = function(seed, element, i, array) {
@@ -118,21 +116,77 @@ var averageBalance = function(array) {
 
 
 var firstLetterCount = function(array, letter) {
+    //I: an array & a letter
+    //O: a number
+    
+    //Find how many customer's names begin with a given letter
+    //Use the filter function to loop through the array and return a new array 
+    //with all true elements.
+    
+    //Declare the test function to return the zero index of the name name 
     let test = function(e, i, array) {
          return array[i].name[0].toLowerCase() === letter.toLowerCase();
     };
-    return _.filter(array, test).length;
+    return _.filter(array, test).length; //Return the length of the new array.
 };
 
 
-var friendFirstLetterCount;
+var friendFirstLetterCount = function(array, customer, letter) {
+    //I: an array, a customer & a letter
+    //O: a number
+    
+    //Find how many friends of a given customer's have a name that starts with 
+    //a given letter.
+    
+    //Create a container to hold the test..
 
-var friendsCount;
+    var test = function(e, i, a) {
+         return array[i].name[0].toLowerCase() === letter.toLowerCase();
+    };
+    return _.filter(array, test).length; //Return the length of the new array.
+};
 
-var topThreeTags;
 
-var genderCount;
+var friendsCount = function(array, name){
+    //I: an array & a name
+    //O: an array
+    
+    //Find the customers' names that have a given customer's name in their friends list
+    //Use the 
+};
 
+var topThreeTags = function (){
+    //I: an array & a name
+    //O: an array
+    
+    //Find the customers' names that have a given customer's name in their friends list
+    //Use the 
+};
+
+var genderCount = function(array){
+//Create a summary of genders
+// create a variable using the reduce function
+// set condition to separate genders into (male, female, transgender)
+// return an object containing a count of each gender
+   
+    var genderObject = _.reduce(array, (genderLikeObject, customerElement) => {
+        if(customerElement.gender === "male") {
+           
+            genderLikeObject.male ++;
+           
+        } else if(customerElement.gender === "female") {
+            genderLikeObject.female ++;
+        } else {
+            genderLikeObject.transgender ++;
+        }
+        return genderLikeObject;
+    }, { male: 0,
+    female: 0,
+    transgender: 0});
+
+   
+return genderObject;
+};
 //////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE ////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
