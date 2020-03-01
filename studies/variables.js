@@ -64,6 +64,10 @@ var myName;
  *A best practice is to declare a variable at the top of their scope to make determining where the variable is used is easy.
  * 
  */
+ 
+console.log(appleType);
+var appleType = "Apple Crisp"; // The console will print "undefined" when referencing the appleType.
+
 
 // 2. let //
 let yourName;
@@ -71,6 +75,7 @@ let yourName;
 *This keyword can be reassigned or updated but not declared. A reference error will occur if attempting to utilize
 *the let variable before it is initialized. 
 */
+
 
 // 3. const //
 const theirNames = 0;
@@ -85,6 +90,5 @@ const theirNames = 0;
 *Hoisting is the process of moving a declaration to the top of its scope-able limits.
 *ONLY the declaration will be moved to the zeroth line.
 */
-console.log(appleType);
-var appleType = "Apple Crisp"; // The console will print "Apple Crisp" when referencing the appleType.
 
+// Talk about hoisting with let and const!!

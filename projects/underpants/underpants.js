@@ -539,21 +539,49 @@ _.some = function(collection, test) {
 */
 
 
-_.reduce = function(array, test, seed){
-    // loop through the array
-    _.each(array, function(element, index, arr){
-        // if seed is undefiend, the seed equals the first element
-        if(seed === undefined){
-            seed = array[0];
-            // if there is a seed, the seed equals, the action applied to the seed, element, and index
-        } else if(seed){
-            seed = test(seed, element, index);
-        }
-    });
-    // return the seed
-    return seed;
-};
+// _.reduce = function(array, test, seed){
+//     // loop through the array
+//     _.each(array, function(element, index, arr){
+//         // if seed is undefiend, the seed equals the first element
+//         if(seed === undefined){
+//             seed = array[0];
+//             // if there is a seed, the seed equals, the action applied to the seed, element, and index
+//         } else if(seed){
+//             seed = test(seed, element, index);
+//         }
+//     });
+//     // return the seed
+//     return seed;
+// };
 
+
+_.reduce = function(array, test, seed) {
+    let prevResult;
+    //test if there is a seed
+    if (seed !== undefined) {
+        //create variable to hold seed value
+        prevResult = seed;
+        //use each() to gain access to each value in array
+        _.each(array, function(e, i, a) {
+            //calling a function for every element, passing prevResult, e, & i
+            prevResult = test(prevResult, e, i, a);
+        })
+    } else {
+        //if there is no seed    
+        //use first element of the array as the seed value
+        //create variable to hold seed value
+        prevResult = array[0];
+        //use for loop to iterate starting at index[1] rather than [0] as each() does
+        for (let i = 1; i < array.length; i++) {
+            //invoke given function <test>
+            //reassign prevResult on each iteration to the result of <test>
+            prevResult = test(prevResult, array[i], i, array);
+        }
+    }
+    //last iteration will be returned into prevResult and exist in this parent scope
+    //return the value stored in prevResult
+    return prevResult;
+}
 /** _.extend READ REST PARAMETERS
 * Arguments:
 *   1) An Object

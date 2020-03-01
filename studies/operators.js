@@ -86,7 +86,7 @@ var b = 12;
 (a === 2 || b === 11);  // Evaluates to be true because 1 of the values is true.
 
 // ! Not - This NOT true
-(a == b); // Evaluates to true because 2 does NOT equal 12
+(a !== b); // Evaluates to true because 2 does NOT equal 12
 
  
  // 5. Unary Operators //
@@ -118,16 +118,9 @@ var b = 12;
  
  // 6. Ternary Operators // 
  /* 
- * Takes three arguments. A comparison, a result upon a true comparison and 
+ * Takes three operands. A comparison, a result upon a true comparison and 
  * a third based on a false comparison.
  */
- var two = 2, three = 3, four;
+
  
- if (two < three) {
-  four = two;
- }
- else {
-  four = three;
- }
- 
- 
+// WRITE ON TERNARY OPERATORS

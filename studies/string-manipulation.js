@@ -12,13 +12,11 @@ var yourString = "This string" + " and this one." // An assignment operator to c
 
 // 2. With string methods //
 
-// .length The length property returns the length of the string.
-var stringy = "Never give up!"
-stringy.length; // Returns 14
-
-// .length-1  The length -1 returns the final index of the given string.
-stringy.length-1; //Returns 13
-
 // indexOf() Finding an index of the given string.
 stringy.indexOf("g"); // Returns 6
 
+// 3. //
+// 4. //
+// 5. //
+// 6. //
+// Write at least 6 string methods

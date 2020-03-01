@@ -33,29 +33,96 @@ var maleCount = function(array) {
     }).length; // chain on dot length to get # of male customers
     
 };
-    //I: an array
-    //O: a number
-    //C: use _.reduce
-    //Find the # of female customers
     
-var femaleCount;
-
-
-
-var oldestCustomer = function (array){
+var femaleCount = function(array) {
     //I: an array
-    //O: a string
-    //C: N/A
-    //Find the oldest customer's name
+    //O: number
+    //C: use _.reduce
+    
+    //test for gender key === "female"
+    //start seed at 0 to keep track of count
+    //if gender === female, add 1 to seed value
+    let func = function(seed, element, i, array) {
+        if (array[i].gender === "female") {
+            seed += 1;
+        }
+    //return seed
+        return seed;
+    };
+    // return the reduce function call passing the arguments array, func, and 0.
+    return _.reduce(array, func, 0);
 };
 
-var youngestCustomer; 
+var oldestCustomer = function(array) {
+    //I: an array
+    //O: a string
+    
+    //Find the oldest customer's name
+    //Declare a variable and assign to 0.
+    let age = 0;
+    // Declare a variable to hold the oldest customer's name.
+    let name;
+    //Declare test to run an action on the e,i,a
+    let test = function(element, i, collection) {
+    //If the iterated customer's age is greater than the current age assignment 
+    //reassign the customer's age to the age variable
+    //also assign the name variable the name of the iterated customer
+        if (array[i].age > age) {
+            age = array[i].age;
+            name = array[i].name;
+        }
+    };
+    // The each function will apply an action to each value of a collection.
+    _.each(array, test);
+    // Return the customer's name
+    return name;
+};
 
-var averageBalance;
+var youngestCustomer = function(array) {
+    //I: an array
+    //O: a string
+    
+    //Find the youngest customer's name
+    //Declare a variable and assign to 100.
+    let age = 100;
+    // Declare a variable to hold the oldest customer's name.
+    let name;
+    //Declare test to run an action on the e,i,a
+    let test = function(element, i, collection) {
+    //If the iterated customer's age is less than the current age assignment 
+    //reassign the customer's age to the age variable
+    //also assign the name variable the name of the iterated customer
+        if (array[i].age < age) {
+            age = array[i].age;
+            name = array[i].name;
+        }
+    };
+    // The each function will apply an action to each value of a collection.
+    _.each(array, test);
+    // Return the customer's name
+    return name;
+};
+
+  
+
+var averageBalance = function(array) {
+    let balances = _.pluck(array, "balance");
+    let test = function(seed, element, i, array) {
+        seed += Number(array[i].balance.replace(/\$|,/g, ''));
+        return seed;
+    };
+    let totalBalance = _.reduce(array, test, 0);
+    let avgBalance = totalBalance / balances.length;
+    return avgBalance;
+};
 
 
-
-var firstLetterCount;
+var firstLetterCount = function(array, letter) {
+    let test = function(e, i, array) {
+         return array[i].name[0].toLowerCase() === letter.toLowerCase();
+    };
+    return _.filter(array, test).length;
+};
 
 
 var friendFirstLetterCount;

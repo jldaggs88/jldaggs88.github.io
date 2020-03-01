@@ -18,8 +18,11 @@ var anotherNumber = 3.3;
 // 2. String // "This is a string"
 /*
 *A string is a collection of characters that can include spaces and numbers inside of quotations.
+String methods and properties do not change the existing value. They return a new 
+one. 
 */
 var meString = "Oh to be a String!";
+
 
 // 3. Boolean //
 /*

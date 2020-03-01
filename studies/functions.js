@@ -49,3 +49,6 @@ var functionVar = function () {
 *can continue to exist in these closures! (See: our meeting-room app for an example!) 
 *(ALSO, see: Understanding JavaScript Closures with Ease)
 */
+
+
+// WRITE ON SCOPES CLOSURES NAMED FUNCTION AND FUNCTION EXPRESIION
