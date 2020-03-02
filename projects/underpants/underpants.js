@@ -538,27 +538,32 @@ _.some = function(collection, test) {
 *   _.reduce([1,2,3], function(previousSum, currentValue, currentIndex){ return previousSum + currentValue }, 0) -> 6
 */
 
-_.reduce = function(array, func, seed){
-    let previousResult;
-    // if there is a seed
-    if (seed !== undefined){
-        previousResult = seed;
-        // use each to gain access to each value in the array
-        _.each(array, function(e, i, a){
-        //calling function for every element, passing in previous, element, index and array
-            previousResult = func(previousResult, e, i, a);
+_.reduce = function(array, test, seed) {
+    let prevResult;
+    //test if there is a seed
+    if (seed !== undefined) {
+        //create variable to hold seed value
+        prevResult = seed;
+        //use each() to gain access to each value in array
+        _.each(array, function(e, i, a) {
+            //calling a function for every element, passing prevResult, e, & i
+            prevResult = test(prevResult, e, i, a);
         });
-    } else {  // there is no seed
-    // use the first element of the array as the seed
-        previousResult = array[0];
-        // implement a for loop to start iterating at my 1st index
-        for (let i = 1; i < array.length; i++){
-            //invoke my func function and reassign it's return value to previous result
-            previousResult = func(previousResult, array[i], i, array);
+    } else {
+        //if there is no seed    
+        //use first element of the array as the seed value
+        //create variable to hold seed value
+        prevResult = array[0];
+        //use for loop to iterate starting at index[1] rather than [0] as each() does
+        for (let i = 1; i < array.length; i++) {
+            //invoke given function <test>
+            //reassign prevResult on each iteration to the result of <test>
+            prevResult = test(prevResult, array[i], i, array);
+        }
     }
-    }
-    //return my previousResult variable
-    return previousResult;
+    //last iteration will be returned into prevResult and exist in this parent scope
+    //return the value stored in prevResult
+    return prevResult;
 };
 
 /** _.extend READ REST PARAMETERS

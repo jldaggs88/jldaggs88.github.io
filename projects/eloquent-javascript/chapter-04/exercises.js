@@ -97,12 +97,19 @@ function reverseArrayInPlace(array) {
 ////////////////////////////////////////////////////////////////////////////////
 
 function arrayToList(array) {
-  // Create a contianer 
-  var listedArray = null;
+  //Build a list structure
+  // Create a container assigned to null when there is no such element
+  var list = null;
+  //Iterate through the list backwards decrementing by 1
   for (var i = array.length - 1; i >= 0; i--) {
-    listedArray = {value: array[i], rest: listedArray};
+    //Reassign the list to form an object chain
+    list = {
+      value: array[i],
+      rest: list
+    };
   }
-  return listedArray;
+  //Return the new list
+  return list;
 }
 
 
@@ -111,7 +118,10 @@ function arrayToList(array) {
 ////////////////////////////////////////////////////////////////////////////////
 
 function listToArray(list) {
+  //Build a function that produces an array from list
+  //Declare an array literal
  var array = [];
+ //pointing to the current sublist
   for (let node = list; node; node = node.rest) {
     array.push(node.value);
   }
@@ -122,9 +132,12 @@ function listToArray(list) {
 // prepend /////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function prepend(value, list) {
-
-return {value, rest: list};
+function prepend(value, list) { //Function that takes a an element and a list
+//Create a new list that adds the element to the front of the input list
+return {
+value,
+rest: list
+};
 
 }
 
@@ -132,10 +145,13 @@ return {value, rest: list};
 // nth /////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function nth(list, n) {
+function nth(list, number) { //Takes a list, a number
+//Return undefined if there is no element
 if (!list) return undefined;
-  else if (n == 0) return list.value;
-  else return nth(list.rest, n - 1);
+//Else if Return the element at the given position in the list
+  else if (number == 0) return list.value;
+  //Else Recursion call to return 
+  else return nth(list.rest, number - 1);
 
 }
 
@@ -143,20 +159,22 @@ if (!list) return undefined;
 // deepEqual ///////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function deepEqual(a, b) {
+function deepEqual(a, b) {//Function takes two two values, return only true if they are the same
+  // This the values are strictly equal return true
   if (a === b) return true;
- 
+ // if a is loosely equal to null, or not an object, or b is loosely equal to null, or not an object return false
   if (a == null || typeof a != "object" ||
       b == null || typeof b != "object") return false;
-
+//Create two variable and assign it to the object a's and b's iteration 
   let keysA = Object.keys(a), keysB = Object.keys(b);
-
+//If the lengths do not equal return false
   if (keysA.length != keysB.length) return false;
-
+//Loop through the key in KeyA 
   for (let key of keysA) {
+    //If Key does not includes the key from keyA or if a's key and b's key do not equal return false.
     if (!keysB.includes(key) || !deepEqual(a[key], b[key])) return false;
   }
-
+// Else return true
   return true;
 
 }
