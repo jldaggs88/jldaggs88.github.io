@@ -34,7 +34,21 @@ var maleCount = function(array) {
     
 };
 
-var femaleCount;
+var femaleCount = function(array, number) {
+    //i: an array
+    //o: number
+    //c: use _.reduce
+    //test for gender key === "female"
+    //start seed at 0 to keep track of count
+    //if gender === female, add 1 to seed value
+    let func = function(seed, element) {
+        if (array[element].gender === "female") {
+            seed += 1;
+        }
+        return seed;
+    };
+    return _.reduce(array, func, 0);
+};
 
 var oldestCustomer = function(array) {
     //I: an array
@@ -86,60 +100,86 @@ var youngestCustomer = function(array) {
     return name;
 };
 
+var averageBalance = function(array) {
+    //I: an array
+    //O: a number
 
-//I: an array
-//O: a number
-
-//Find the average balance of all customers
-var averageBalance;
+    // Find the average balance of all customers
+    // Assign a varibale the pluck call passing in the array and "balance"
+    let balances = _.pluck(array, "balance");
+    // Set test to a function passing in the seed, e, i, & a.
+    let test = function(seed, element, i) {
+        //Add the balance replacing the commas and converting to a number.
+        seed += Number(array[i].balance.replace(/\$|,/g, ''));
+        // Return the seed
+        return seed;
+    };
+    // Set a varibale to the result of the reduce function call
+    let totalBalance = _.reduce(array, test, 0);
+    console.log(totalBalance);
+    // Set a variable totalBalance divided by the length of the array.
+    let avgBalance = totalBalance / balances.length;
+    // Return the avgBalance
+    return avgBalance;
+};
 
 var firstLetterCount = function(array, letter) {
-    //I: an array & a letter
-    //O: a number
+    // //I: an array & a letter
+    // //O: a number
     
-    //Find how many customer's names begin with a given letter
-    //Use the filter function to loop through the array and return a new array 
-    //with all true elements.
+    // //Find how many customer's names begin with a given letter
+    // //Use the filter function to loop through the array and return a new array 
+    // //with all true elements.
     
-    //Declare the test function to return the zero index of the name name 
-    let test = function(e, i, array) {
-         return array[i].name[0].toLowerCase() === letter.toLowerCase();
-    };
-    return _.filter(array, test).length; //Return the length of the new array.
+    // //Declare the test function to return the zero index of the name name 
+    // let test = function(e, i, array) {
+    //      return array[i].name[0].toLowerCase() === letter.toLowerCase();
+    // };
+    // return _.filter(array, test).length; //Return the length of the new array.
 };
 
 
-var friendFirstLetterCount;
+var friendFirstLetterCount = function (array, customer, letter){
     //I: an array, a customer & a letter
     //O: a number
     
     //Find how many friends of a given customer's have a name that starts with 
     //a given letter.
     
-    //Create a container to hold the test..
-
-    // var test = function(e, i, a) {
-    //      return array[i].name[0].toLowerCase() === letter.toLowerCase();
-    // };
-    // return _.filter(array, test).length; //Return the length of the new array.
-
-var friendsCount;
+    var test = function(e, i, a) {
+         return array[i].name[0].toLowerCase() === letter.toLowerCase();
+    };
+    return _.filter(array, test).length; //Return the length of the new array.
+};
+var friendsCount = function (array, name){
     //I: an array & a name
     //O: an array
     
     //Find the customers' names that have a given customer's name in their friends list
     //Use the 
+};
 
-var topThreeTags;
-    //I: an array & a name
+var topThreeTags = function (array){
+    //I: an array
     //O: an array
+    var popTags = [];
+    console.log(popTags);
+    //Find three top tags
+    let test = function (e){
+    //Push the tags into the popTags array
+        popTags.push(e.tags);
+    };
+    // Use map to iterate and return the 
+    _.map(array, test);
     
-    //Find the customers' names that have a given customer's name in their friends list
-    //Use the 
-
-var genderCount = function(array){
+    //Return an array 
+    return popTags;
+    
+    
 
 };
+
+var genderCount;
 
 //////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE ////////////////////////////////////////////
