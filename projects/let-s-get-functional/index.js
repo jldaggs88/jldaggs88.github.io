@@ -41,13 +41,12 @@ var femaleCount = function(array, number) {
     //test for gender key === "female"
     //start seed at 0 to keep track of count
     //if gender === female, add 1 to seed value
-    let func = function(seed, element) {
-        if (array[element].gender === "female") {
-            seed += 1;
-        }
-        return seed;
-    };
-    return _.reduce(array, func, 0);
+var totalFemme = 0;
+    _.reduce(array, function(seed, element){
+        if(element.gender === 'female'){
+            return totalFemme = seed +1;
+    }} , 0);
+     return totalFemme;
 };
 
 var oldestCustomer = function(array) {
@@ -116,50 +115,41 @@ var averageBalance = function(array) {
     };
     // Set a varibale to the result of the reduce function call
     let totalBalance = _.reduce(array, test, 0);
-    console.log(totalBalance);
     // Set a variable totalBalance divided by the length of the array.
     let avgBalance = totalBalance / balances.length;
     // Return the avgBalance
     return avgBalance;
 };
 
-var firstLetterCount = function(array, letter) {
-    // //I: an array & a letter
-    // //O: a number
-    
-    // //Find how many customer's names begin with a given letter
-    // //Use the filter function to loop through the array and return a new array 
-    // //with all true elements.
-    
-    // //Declare the test function to return the zero index of the name name 
-    // let test = function(e, i, array) {
-    //      return array[i].name[0].toLowerCase() === letter.toLowerCase();
-    // };
-    // return _.filter(array, test).length; //Return the length of the new array.
-};
-
-
-var friendFirstLetterCount = function (array, customer, letter){
-    //I: an array, a customer & a letter
+var firstLetterCount = function(array, letter){
+    //I: an array & a letter
     //O: a number
     
-    //Find how many friends of a given customer's have a name that starts with 
-    //a given letter.
+    //Find how many customer's names begin with a given letter
+    //with all true elements.
     
-    var test = function(e, i, a) {
-         return array[i].name[0].toLowerCase() === letter.toLowerCase();
-    };
-    return _.filter(array, test).length; //Return the length of the new array.
-};
-var friendsCount = function (array, name){
-    //I: an array & a name
-    //O: an array
-    
-    //Find the customers' names that have a given customer's name in their friends list
-    //Use the 
-};
+    //Declare the test function to return the zero index of the name name 
+    var firstLetterArray = [];
+    var count = 0;
 
-var topThreeTags = function (array){
+
+    _.map(array, function(element, index, array){
+        firstLetterArray.push(customers[index].name);
+    });
+_.map(firstLetterArray, function(element, index, array){
+   if (firstLetterArray[index][0].toUpperCase() === letter.toUpperCase()){
+count++;
+
+   }
+});
+return count;
+
+};
+ 
+var friendFirstLetterCount;
+
+var friendsCount;
+var topThreeTags = function(array){
     //I: an array
     //O: an array
     var popTags = [];
@@ -179,7 +169,26 @@ var topThreeTags = function (array){
 
 };
 
-var genderCount;
+var genderCount = function(array){
+
+    var genderObject = _.reduce(array, (genderLikeObject, customerElement) => {
+        if(customerElement.gender === "male") {
+           
+            genderLikeObject.male ++;
+           
+        } else if(customerElement.gender === "female") {
+            genderLikeObject.female ++;
+        } else {
+            genderLikeObject.transgender ++;
+        }
+        return genderLikeObject;
+    }, { male: 0,
+    female: 0,
+    transgender: 0});
+
+   
+return genderObject;
+};
 
 //////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE ////////////////////////////////////////////

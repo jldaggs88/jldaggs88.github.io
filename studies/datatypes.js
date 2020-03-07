@@ -20,9 +20,33 @@ var anotherNumber = 3.3;
 *A string is a collection of characters that can include spaces and numbers inside of quotations.
 String methods and properties do not change the existing value. They return a new 
 one. 
+To access indivudal characters in a string we use string methods. They access return new a string or print the value
+at a given index.
+Please see below for some string method and porperties.
 */
 var meString = "Oh to be a String!";
 
+//String Properties
+meString.length; //Prints the length of the string
+ 
+//...String Methods
+
+//.concat() Concatnates two or more string and return a new string combined
+var string1 = "Never ";
+var string2 = "better!";
+var howYouDoing = string1.concat(string2); //"Never better"prints to the console
+
+//.split() Split the strings character into their own strings
+howYouDoing.split(" ");//Prints 'N', "e", "v", "e", "r", " ", "b", "e", "t", "t", "e", "r", "!" 
+
+//.slice Takes apart the string and returns a new one with the changes
+howYouDoing.slice(1); //Prints "ever better!"
+
+//.includes() Checks if a character is inside a string.
+howYouDoing.includes("!"); //Returns true
+
+//.indexOf() Prints the position of the 1st occurence of a value
+howYouDoing.indexOf("o"); //Returns index 1
 
 // 3. Boolean //
 /*
@@ -37,17 +61,22 @@ var giveUp = false;
 * Is a collection of values. Those values can be any data type such as strings, booleans,
 * other arrays, numbers and other objects. Arrays have indexes or addresses that 
 *start with zero as its first element. Arrays must be assigned to a variable, each element
-* must be separated by commas and 1 space, and the entire collection must be housed between square brackets.
+* must be separated by commas and 1 space, and the entire collection must be housed between 
+*square brackets. To access elements in an array utilize the index number starting at 0 in combination
+*with a bracket notation.
 */
 
 var secondArray = []; // array literal 
-var filledArray = ["If it is", 3, "or", "4", false];
+var filledArray = ["If it is", 3, "or", "4", false]
+
+filledArray[0]; //Prints "If it is"
 
 // 5. Object // myCurlyBrack = {}
 /*
 *An object is a complex building block for Javascript. Primitive and reference data types can be
 *stored inside an object. Objects contain properties or key and value pairs (key:value) separated by commas that store descriptive information. 
 * Objects are best for grouping information thats but also requires other information or values. 
+*To access an object's properrties utilize dot or bracket notation.
 */
 
 var monthsObject = {
@@ -55,6 +84,9 @@ var monthsObject = {
     holidays: ["Kawanza", "Christmas", "Jessa's Birthday"],
     numberOfDays: 31
 }
+
+monthsObject.month; // "December" will print to the screen"
+monthsObject["holidays"]; // ["Kawanza", "Christmas", "Jessa's Birthday"] will print
 
 // 6. Function // function takeAction(){};
 /*
@@ -74,14 +106,15 @@ var gonnaDefineLater;
 
 // 8. null //
 /*
-*Objects with no variables are null datatypes. It is the absence of data. 
+*Objects with no variables are null datatypes. It is the absence of data and undefined
+*by the programmer. 
 */
 
 let emptyVariable = null;
 
 // 9. NaN // Not-A-Number
 /*
-*NaN is a value that evaluates to any but a number. Undefined by the programmer.
+*NaN is a property that returns whether a given value or expression is a number
 *
 */
 
@@ -98,6 +131,10 @@ isNaN("Not a number"); //prints true
 *is displayed once this is exceeded. 
 *
 */
+
+console.log(Math.log(0)); //Prints -Infinity
+console.log(Math.pow(20, 5000)); //Prints Infinity
+
 
 // 11. What is the difference between primitive/simple and complex data types?
 /*
@@ -120,11 +157,10 @@ var newB = original; //prints "One and Only" to the console
 *When using or accessing a complex value such as an object we utilize the name of the data to do an action. This doesn't 
 *adjust the original code. It only refers to it.
 */
-function passArgs(value) {
-    return "I'm still the original!"
-}
-passArgs(3);
 
+function copy(value){
+    value *= 2;
+};
+copy(stay); //Prints 8 to the console
 
-
-
+var stay = 4; // stay is still 4 when console logged. The value is only copied for use inside the function

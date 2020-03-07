@@ -84,10 +84,6 @@ var b = 12;
 
 // || Or - This OR That evaluates to true
 (a === 2 || b === 11);  // Evaluates to be true because 1 of the values is true.
-
-// ! Not - This NOT true
-(a !== b); // Evaluates to true because 2 does NOT equal 12
-
  
  // 5. Unary Operators //
 /* Takes a single argument and performs an operation. It only has one operand that 
@@ -118,9 +114,12 @@ var b = 12;
  
  // 6. Ternary Operators // 
  /* 
- * Takes three operands. A comparison, a result upon a true comparison and 
- * a third based on a false comparison.
+ * Takes three operands. A comparison ?, a result upon a true comparison followed by a colon (:), and 
+ * a third based on a false comparison. This can be use in place of a if conditional statement. It requires less code.
  */
 
- 
-// WRITE ON TERNARY OPERATORS
+function freeShipping(total){
+ return (total ? total >= 50 : total <= 49)
+};
+console.log(freeShipping(12)); //Return false to the screen
+console.log(freeShipping(250)); //Returns true to the screen

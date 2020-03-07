@@ -28,12 +28,15 @@ function numbersAdd (num1, num2) { // Parameters will determine the input
 numbersAdd(6,9); // Prints 15 to the console.
 
 // What’s the syntax for a NAMED function?
-function namedFunction () {
-    
+// A named function is loaded before any code is executed. 
+
+function namedFunction () { //A named function begins with the function keyword followed by the name of the function
+    //Inside the curly brackets is where you place the action to be perofrmed at the call.
 }
-namedFunction();
+namedFunction(); //To run the code block or action the function must be called outside of it
 
 // How do we assign a function to a variable?
+// The assignment of a function to a variable is calle da function expression. They are useful 
 var functionVar = function () {
     
 };
@@ -43,12 +46,32 @@ var functionVar = function () {
 
 // We specific inputs by setting parameters. We specify outputs by coding a return statement.
 
-// Scope: Functions can see and modify variables in parent or global scopes. The inverse is NOT true.
+/* Scope: Functions can see and modify variables in parent or global scopes. The inverse is NOT true.
+*The global scope has access only to the variables declared in that scope. The function scope 
+* has access to its variables and the variables of is parent or global scope. The nested scope
+* has access to every single variable that has been declared in the global, function or its own scope.
+*/
+
+var x = 2; //Global scope
+
+function functed(){
+    var y = 4; //Function scope
+    function scoped(){
+        var z = 8; //Nested scope
+        return (x + y + z);
+    }
+    return scoped();
+};
+functed(); //Displays 14 to the screen
+z; //Error not defined because variable z is a closure that can't be a access by its parent scope.
+
 /* Closures: Functions form closures around the data they house. If an object returned from
 *the Function and is held in memory somewhere (referenced), that closure stays ALIVE, and data 
 *can continue to exist in these closures! (See: our meeting-room app for an example!) 
 *(ALSO, see: Understanding JavaScript Closures with Ease)
 */
 
-
-// WRITE ON SCOPES CLOSURES NAMED FUNCTION AND FUNCTION EXPRESIION
+/* Closures are singular functions with access to the parent scope at any time. It's parent scope 
+*variable can be used within the body of the closure function. Function expressions benefical
+*when working with closures because they are defined with in their scope. 
+*/

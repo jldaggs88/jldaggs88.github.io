@@ -76,7 +76,6 @@ let yourName;
 *the let variable before it is initialized. 
 */
 
-
 // 3. const //
 const theirNames = 0;
 /*
@@ -86,9 +85,16 @@ const theirNames = 0;
 */
 
 // 4. Hoisting //
+console.log(fruit); //undefined will print to the screen
+var fruit = "Honey Crisp";
+
+// Hoisting with let and const
 /*
 *Hoisting is the process of moving a declaration to the top of its scope-able limits.
-*ONLY the declaration will be moved to the zeroth line.
+*ONLY the declaration will be moved to the zeroth line. Functions are hoisted by name and body and variables
+*are only hoisted by name. let and const are technically hoisted but their declarations are not initialized. This
+happens once their assignment is evaluated at runtime making them inaccessiable until both the assignment and declaration are
+*complete. It is in the Temporal Dead Zone. To avoid the potential for erors the use of let restrict or move let to the top of its
+*scope.
 */
 
-// Talk about hoisting with let and const!!

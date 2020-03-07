@@ -12,9 +12,10 @@
 * and it is true. A break statement stops the code from executing. The loop must have two parts.
 * These are a condition and an incrementer. 
 */
-while (5 > 3) {
+var i = 0;
+while (i > 3) {
     console.log("Clap your hands!");
-    i++;
+    i++; 
 }
 // 2. For loop //
 /*
@@ -34,7 +35,7 @@ for (var i = 0; i > 5; i++) {
 }
 // 3. For-in //
 /*
-* Loops through the properties of an object.
+* Loops through the properties of an object each time executing the code block for each property.
 */
 
 var exampleObject = {
@@ -43,8 +44,14 @@ var exampleObject = {
     yourkey: "Value"
 };
 for (var key in exampleObject) {
-    console.log(key) /* will loop through the unordered list.
-* until all of its keys are listed. object[key] will return its value pair.
+    console.log(key) /* will loop through the unordered list until all of its keys are listed.
+    thisKey 
+    thatkey
+    yourkey will print to the console.
+* console.log(object[key]) as the codeblock will return its value pair.
+true
+2
+"Value"
 */ 
 }
 
@@ -56,13 +63,13 @@ for (var key in exampleObject) {
 var arrayMe = []; //Create a container for the list.
 // Utilize the index of the array to assign i the last index of the arrayMe Array. Using the .length-1 property.
 for (var i = arrayMe.length -1; i >= 0; i--) { //Set the stopping condition to 0. The first and final index decrementing by subtracting one. 
-    console.log(arrayMe[i]); //Prints arrayMe indexes to the console.
+    console.log(arrayMe[i]); //Prints the looped index's element to the console.
 }
 
 var arrayYou = []; //Create a container for the list.
 //Utilize the index of 0 to assign i the first index of the array. 
 for (var i = 0; i <= arrayMe.length -1; i++) { //Set the stopping condition to the final and last index of the array. Incrementing by 1.
-    console.log(arrayYou[i]); //Prints arrayYou indexes to the console.
+    console.log(arrayYou[i]); //Prints looped index's element to the console.
 }
 // 5. Loop over an Object //
 /* 
