@@ -63,7 +63,7 @@ function functed(){
     return scoped();
 };
 functed(); //Displays 14 to the screen
-z; //Error not defined because variable z is a closure that can't be a access by its parent scope.
+//z; //Error not defined because variable z is a closure that can't be a access by its parent scope.
 
 /* Closures: Functions form closures around the data they house. If an object returned from
 *the Function and is held in memory somewhere (referenced), that closure stays ALIVE, and data 
