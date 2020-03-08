@@ -128,65 +128,151 @@ var firstLetterCount = function(array, letter){
     //Find how many customer's names begin with a given letter
     //with all true elements.
     
-    //Declare the test function to return the zero index of the name name 
+    //Create an array literal to hold the push names 
     var firstLetterArray = [];
+    //Create an incrementer
     var count = 0;
-
-
+    //Map the array and applied the test to each element in an array
     _.map(array, function(element, index, array){
+        //Push the name into the container
         firstLetterArray.push(customers[index].name);
     });
+//Then map the new array and applie the test to each element
 _.map(firstLetterArray, function(element, index, array){
+   //If the first letter is the same as the given letter  
    if (firstLetterArray[index][0].toUpperCase() === letter.toUpperCase()){
-count++;
-
+    //Increment the counter
+    count++;
    }
 });
+//Return the count for the next interation 
 return count;
 
 };
  
-var friendFirstLetterCount;
+var friendFirstLetterCount = function(array, customer, letter){
+    //I: an array, a customer, a letter
+    //O: a number
+    
+    //Find
+    
+//Pluck the name value from the given array and assign the results to a new variable 
+var namesArray = _.pluck(array, 'name');
+//Pluck the firends object from the given array and assign the results to a new variable
+var friendsArray = _.pluck(array, 'friends');
+//Create an incrementer to hold the count
+var acc = 0;
+//Iterate the namesarray 
+for(var i = 0; i < namesArray.length; i++){
+    //If the given customer is the same a iterated customer
+    if(customer === namesArray[i]){
+        //Assing the iterated customer to the new variable
+        var index = i;
+    }
+    
+} 
+//this will store the array of a single customer's friends
+var specificFriendArray = friendsArray[index];
+//iterating to find which friend starts with the same letter then will add one to the accumm variable
+for(var i = 0; i < specificFriendArray.length; i++){
+    if(letter.toLowerCase === specificFriendArray[i].name.charAt(0) || letter.toLocaleUpperCase() === specificFriendArray[i].name.charAt(0)){
+        acc +=1;
+    }
+}
 
-var friendsCount;
+  //Return the total
+return acc; 
+};
+
+var friendsCount = function(array, name){
+    //I: an array & a name
+    //O: array
+    
+    //Find the customers' names that have a given customer's name in their friends list    
+    //Create a array literal to hold customer's names
+    var friendsWithCustomer = [];
+    //Use reduce to get a single array after evaluating each element
+     _.reduce(array,function(seed, customer){
+       //Loop through the customer's friend array
+        for(var i = 0; i < customer.friends.length; i++){
+                //If the given name is the same as the iterated value
+                if(name === customer.friends[i].name){
+                 //Reassign seed with the customers name
+                  seed = customer.name;
+                //Push the the seed into the into the array literal
+                friendsWithCustomer.push(seed);  
+        }
+        }
+        //Return the array of customer's names
+    }); return friendsWithCustomer;
+};
 var topThreeTags = function(array){
     //I: an array
     //O: an array
-    var popTags = [];
-    console.log(popTags);
-    //Find three top tags
-    let test = function (e){
-    //Push the tags into the popTags array
-        popTags.push(e.tags);
-    };
-    // Use map to iterate and return the 
-    _.map(array, test);
     
-    //Return an array 
-    return popTags;
-    
-    
-
+    //:Find the 3 most common tags among all customers' associated tags
+//Assign a new variable to the object
+ var popTags = _.reduce(array,(object, customerObj) => {
+     //Iterate through each customer object's tag key and run a test on it's values
+        _.each(customerObj.tags, function(tagString){
+             //Check if the given object tag is undefined 
+            if(object[tagString] === undefined){
+                 //Assign it 1 if so to mark the first occurence
+                object[tagString] = 1;
+           //Else increment the tag string
+            } else{
+                object[tagString]++;
+            }
+        });
+        //Return the object
+        return object;
+    }, {});
+    //Assign a new variable the objects key in an array
+   var keysArray = Object.keys(popTags);
+   //Assign a new variable the result of sorting the result in the array in descending order
+   var sortedArray = keysArray.sort(function(a, b){
+       return popTags[b] - popTags[a];
+       //Use slice method to remove the first 3 indexes
+   }).slice(0,3);
+//return the sorted sliced array 
+return sortedArray;
+ 
 };
 
 var genderCount = function(array){
-
-    var genderObject = _.reduce(array, (genderLikeObject, customerElement) => {
-        if(customerElement.gender === "male") {
-           
-            genderLikeObject.male ++;
-           
-        } else if(customerElement.gender === "female") {
-            genderLikeObject.female ++;
+    //I: an array
+    //O: object
+    //C: use .reduce
+    
+    /* Create a summary of genders, the output should be:
+    *
+    *{
+    *    male: 3,
+    *    female: 4,
+    *    non-binary: 1
+    *}
+    */
+    //Assign a variable to the result of using the reduce on the given array, gender, and element
+    var genderObject = _.reduce(array, (gender, customer) => {
+        //If the custoemr's gender is male
+        if(customer.gender === "male") {
+           //Increment the gender male key value 
+            gender.male ++;
+           //Else if  the customer's gender is female
+        } else if(customer.gender === "female") {
+            //Increment the gender female key value
+            gender.female ++;
+        //    
         } else {
-            genderLikeObject.transgender ++;
+            gender["non-binary"] ++;
         }
-        return genderLikeObject;
+        return gender;
+        //Seed should be assigned to the an objects key value pairs at 0
     }, { male: 0,
     female: 0,
-    transgender: 0});
+    "non-binary": 0});
 
-   
+   //Return return the object
 return genderObject;
 };
 
