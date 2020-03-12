@@ -20,33 +20,11 @@ var anotherNumber = 3.3;
 *A string is a collection of characters that can include spaces and numbers inside of quotations.
 String methods and properties do not change the existing value. They return a new 
 one. 
-To access indivudal characters in a string we use string methods. They access return new a string or print the value
-at a given index.
+To access indivudal characters in a string we use bracket notations with the index inside.
 Please see below for some string method and porperties.
 */
 var meString = "Oh to be a String!";
-
-//String Properties
-meString.length; //Prints the length of the string
- 
-//...String Methods
-
-//.concat() Concatnates two or more string and return a new string combined
-var string1 = "Never ";
-var string2 = "better!";
-var howYouDoing = string1.concat(string2); //"Never better"prints to the console
-
-//.split() Split the strings character into their own strings
-howYouDoing.split(" ");//Prints 'N', "e", "v", "e", "r", " ", "b", "e", "t", "t", "e", "r", "!" 
-
-//.slice Takes apart the string and returns a new one with the changes
-howYouDoing.slice(1); //Prints "ever better!"
-
-//.includes() Checks if a character is inside a string.
-howYouDoing.includes("!"); //Returns true
-
-//.indexOf() Prints the position of the 1st occurence of a value
-howYouDoing.indexOf("o"); //Returns index 1
+meString[1]; //Will print "h" to the console
 
 // 3. Boolean //
 /*
@@ -114,10 +92,13 @@ let emptyVariable = null;
 
 // 9. NaN // Not-A-Number
 /*
-*NaN is a property that returns whether a given value or expression is a number
-*
+*NaN is a numeric arithmetic computation with numbers and non-numbers evaluating to
+*an illegal number.
 */
+let cantDoTimesTwo = "You can't divide me." / 2;
+console.log(cantDoTimesTwo);  //Prints NaN to the console
 
+//NaN method
 isNaN(7); // prints false
 isNaN("Not a number"); //prints true
 
@@ -147,20 +128,34 @@ console.log(Math.pow(20, 5000)); //Prints Infinity
 *Complex or non-primitive datatypes are passed by reference and their size is indefinite. They are mutable.
 */
 
-// 12. Primitive values are passed to a function BY COPY, complex values are BY REFERENCE. What does that mean, and how are they different?
-/*
-*When using primitive values originally assigned to a variable is copied to the new variable from the original.
-*/
-var original = "One and Only";
-var newB = original; //prints "One and Only" to the console
-/*
-*When using or accessing a complex value such as an object we utilize the name of the data to do an action. This doesn't 
-*adjust the original code. It only refers to it.
-*/
 
-function copy(value){
-    value *= 2;
+/*Primitive values are passed to a function by copy and complex values are passed to the 
+*function by reference. When simple data types is assigned to another that same value can be 
+*altered later and it will not effect the other value. Complex data copies will contain the updated information
+*when doing the same.
+*/
+//By reference
+var colors = { //Original Container
+    favoriteColor: "Mauve",
+    secondPlace: "Cornflower Blue"
 };
-copy(stay); //Prints 8 to the console
+var newColors = colors; //new variable contains the same information as the orignal container
+newColors.favoriteColor = "Cornflower Blue";
+newColors.secondPlace = "Mauve";
 
-var stay = 4; // stay is still 4 when console logged. The value is only copied for use inside the function
+console.log(colors); //Console logging the colors variable will reflect the update newcolors object.
+/*
+{
+*favoriteColor:"Cornflower Blue",
+*secondPlace = "Mauve"
+}
+*/
+
+//By copy
+var x = 3;
+var y = x;
+var y = x + 2;
+
+console.log(y); //Will print 5
+console.log(x); //Will print 3
+

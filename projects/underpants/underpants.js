@@ -187,6 +187,9 @@ for (var i = 0; i < array.length; i++) {
 */
 
 _.contains = function(array, value) {
+    if (value === undefined){
+        return 0;
+    }
 // Return true if 'array' contains 'value' using ternary operator.
     return array.includes(value) ? true : false;
 };

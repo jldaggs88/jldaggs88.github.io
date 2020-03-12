@@ -20,6 +20,7 @@
 * Parameters are used through the function to indicate what action we will later perform on the arguments.
 * Arguments are placed outside of the function body. They are part of the function call. Calling the function
 * passes the arguments into the parameters set throughout the code block. The action we coded will take place on the arguments.
+*This is also called the invoking. 
 */
 
 function numbersAdd (num1, num2) { // Parameters will determine the input
@@ -27,16 +28,20 @@ function numbersAdd (num1, num2) { // Parameters will determine the input
 }
 numbersAdd(6,9); // Prints 15 to the console.
 
-// What’s the syntax for a NAMED function?
-// A named function is loaded before any code is executed. 
+// NAMED function
+// To make a named function declare it in a statement or use as an expression. This means that the name property of the function
+// holds its name.
 
 function namedFunction () { //A named function begins with the function keyword followed by the name of the function
     //Inside the curly brackets is where you place the action to be perofrmed at the call.
 }
-namedFunction(); //To run the code block or action the function must be called outside of it
+namedFunction(); //To run the code block or action the function must be called or ivoked outside of it
 
-// How do we assign a function to a variable?
-// The assignment of a function to a variable is calle da function expression. They are useful 
+// Function Expression
+/* The assignment of a function to a variable is calle da function expression. They are useful when working with creating a IIFE.
+*They are a function expression is alot like a function declaration. If you omit the function name it becomes an anomymous function.
+*Function expressions must be defined when used. 
+*/
 var functionVar = function () {
     
 };
@@ -73,5 +78,14 @@ functed(); //Displays 14 to the screen
 
 /* Closures are singular functions with access to the parent scope at any time. It's parent scope 
 *variable can be used within the body of the closure function. Function expressions benefical
-*when working with closures because they are defined with in their scope. 
+*when working with closures because they are defined with in their scope. Closures are useful for creating 
+* private variables to protct customer information and partial application of functions.
 */
+
+//Closure example
+
+function subtract(number){
+    return function () {//This inner function is accessing a variable from the outer function (number)
+        number - 2;
+    };
+}

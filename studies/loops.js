@@ -13,7 +13,7 @@
 * These are a condition and an incrementer. 
 */
 var i = 0;
-while (i > 3) {
+while (i < 3) {
     console.log("Clap your hands!");
     i++; 
 }

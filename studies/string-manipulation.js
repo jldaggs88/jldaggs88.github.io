@@ -33,4 +33,6 @@ howYouDoing.includes("!"); //Returns true
 //.indexOf() Prints the position of the 1st occurence of a value
 howYouDoing.indexOf("o"); //Returns index 1
 
+//.toUpperCase() Capitalizes each letter in a string
+howYouDoing.toUpperCase(); //Prints "NEVER BETTER!
 
