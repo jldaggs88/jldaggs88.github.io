@@ -504,10 +504,7 @@ _.some = function(collection, test) {
              if (value) {
                 ourArray.push(value);
              }
-         } else if (test(value, index, collection)) {
-             ourArray.push(value);
-         }
- else if(test(value, index, collection)){
+         } else if(test(value, index, collection)){
             //push false elements into new array
             ourArray.push(value);
         }
